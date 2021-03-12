@@ -28,10 +28,13 @@ print(address.group())
 print(binn.group(1))
 
 
-
+title = []
+count = []
+unit = []
+total = []
 with open('names.csv', 'w', newline='') as csvfile:
-    fieldnames = ['Title', 'Count', 'Unit price', 'Total price']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    field = ['Title', 'Count', 'Unit price', 'Total price']
+    writer = csv.DictWriter(csvfile, fieldnames=field)
     writer.writeheader()
     # writer.writerow({'first_name': 'Baked', 'last_name': 'Beans', 'Bagdat': '18'})
     for i in range(len(title)):
