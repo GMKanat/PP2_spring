@@ -2,39 +2,39 @@ import re
 
 import csv
 
-f = open('213.txt', encoding = 'utf-8')
-data = f.read()
+# f = open('213.txt', encoding = 'utf-8')
+# data = f.read()
 
-name = re.search(r"Филиал ТОО.+", data)
-binn = re.search(r"БИН\s(\d{12})", data)
+# name = re.search(r"Филиал ТОО.+", data)
+# binn = re.search(r"БИН\s(\d{12})", data)
 
-title = re.findall(r"\d+\.\n(.+)", data)
-count = re.findall(r"(\d)\,0{3}", data)
-unit = re.findall(r"x\s(.+)\,0{2}", data)
-total = re.findall(r"Стоимость\n(.+),0{2}", data)
+# title = re.findall(r"\d+\.\n(.+)", data)
+# count = re.findall(r"(\d)\,0{3}", data)
+# unit = re.findall(r"x\s(.+)\,0{2}", data)
+# total = re.findall(r"Стоимость\n(.+),0{2}", data)
 
-date = re.search(r"(\d\d.\d\d.\d{4}\s\d\d.\d\d.\d\d)", data)
-address = re.search(r"г\..+", data)
+# date = re.search(r"(\d\d.\d\d.\d{4}\s\d\d.\d\d.\d\d)", data)
+# address = re.search(r"г\..+", data)
 
-print(name.group())
-print(binn.group())
-for i in range(len(title)):
-    print("1. Title: " + title[i])
-    print("2. Count: " + count[i])
-    print("3. Unit price: " + unit[i])
-    print("4. Total price: " + total[i])
-print(date.group())
-print(address.group())
-print(binn.group(1))
+# print(name.group())
+# print(binn.group())
+# for i in range(len(title)):
+#     print("1. Title: " + title[i])
+#     print("2. Count: " + count[i])
+#     print("3. Unit price: " + unit[i])
+#     print("4. Total price: " + total[i])
+# print(date.group())
+# print(address.group())
+# print(binn.group(1))
 
 
-title = []
-count = []
-unit = []
-total = []
+title = ['adam', 'erzhan', 'zhandos']
+count = [13, 14, 54]
+unit = [1, 2, 3]
+total = [123, 145, 121]
 with open('names.csv', 'w', newline='') as csvfile:
-    fieldnames = ['Title', 'Count', 'Unit price', 'Total price']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    field = ['Title', 'Count', 'Unit price', 'Total price']
+    writer = csv.DictWriter(csvfile, fieldnames=field)
     writer.writeheader()
     # writer.writerow({'first_name': 'Baked', 'last_name': 'Beans', 'Bagdat': '18'})
     for i in range(len(title)):
