@@ -1,6 +1,8 @@
 import re
 
-f = open('data.txt', 'r', encoding="utf-8")
+import csv
+
+f = open('213.txt', encoding = 'utf-8')
 data = f.read()
 
 name = re.search(r"Филиал ТОО.+", data)
@@ -24,3 +26,13 @@ for i in range(len(title)):
 print(date.group())
 print(address.group())
 print(binn.group(1))
+
+
+
+with open('names.csv', 'w', newline='') as csvfile:
+    fieldnames = ['Title', 'Count', 'Unit price', 'Total price']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    # writer.writerow({'first_name': 'Baked', 'last_name': 'Beans', 'Bagdat': '18'})
+    for i in range(len(title)):
+    	writer.writerow({'Title': f'{title[i]}', 'Count': f'{count[i]}'})
