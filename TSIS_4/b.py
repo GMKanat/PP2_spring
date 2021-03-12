@@ -34,7 +34,7 @@ unit = []
 total = []
 with open('names.csv', 'w', newline='') as csvfile:
     field = ['Title', 'Count', 'Unit price', 'Total price']
-    writer = csv.DictWriter(csvfile, fieldnames=field)
+    writer = csv.DictWriter(csvfile, field=fieldnames)
     writer.writeheader()
     # writer.writerow({'first_name': 'Baked', 'last_name': 'Beans', 'Bagdat': '18'})
     for i in range(len(title)):
