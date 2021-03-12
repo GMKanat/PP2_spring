@@ -35,4 +35,4 @@ with open('names.csv', 'w', newline='') as csvfile:
     writer.writeheader()
     # writer.writerow({'first_name': 'Baked', 'last_name': 'Beans', 'Bagdat': '18'})
     for i in range(len(title)):
-    	writer.writerow({'Title': f'{title[i]}', 'Count': f'{count[i]}'})
+    	writer.writerow({'Title': f'{title[i]}', 'Count': f'{count[i]}', 'Unit price': f'{unit[i]}', 'Total price': f'{total[i]}'})
